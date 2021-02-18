@@ -30,7 +30,7 @@ jobs:
           echo "DEV_TAG=$(echo ${GITHUB_SHA:1:7})" >> $GITHUB_ENV
       - name : tree 
         run : |
-          echo "TREE=$(echo 'git show --quiet --format=format:'%T')"  >> $GITHUB_ENV
+          echo "TREE=$(echo 'git show --quiet --format=format:'%T' ')"  >> $GITHUB_ENV
 
       # step to check .. to be removed.
       - name: check "dev" Tag
