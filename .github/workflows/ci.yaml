@@ -24,3 +24,19 @@ jobs:
         with:
           key: ${{ secrets.CROSS_PULL_GIT_ACTIONS }}
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
+
+      - name: Generate Image Tags "dev"
+        run: |
+          echo "DEV_TAG=$(echo ${GITHUB_SHA:1:7})" >> $GITHUB_ENV
+      - name : tree 
+        run : 
+      echo "TREE=$(echo 'git show --quiet --format=format:'%T')"  >> $GITHUB_ENV
+
+      # step to check .. to be removed.
+      - name: check "dev" Tag
+        run: |
+          echo $DEV_TAG
+
+      
+
+      
